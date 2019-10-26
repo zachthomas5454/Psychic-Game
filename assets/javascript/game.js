@@ -19,7 +19,7 @@ document.onkeyup = function () {
             letter = "";
         }
         if (userselect !== computerselect) {
-            letter = userselect + ", "+ letter;
+            letter = letter + userselect + ", ";
             guessLeft--;
 
             if (guessLeft == 0) {
