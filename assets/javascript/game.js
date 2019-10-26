@@ -2,14 +2,12 @@ var options = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", 
 var wins = 0;
 var losses = 0;
 var guessLeft = 9;
-
+var letter = "";
 
 document.onkeyup = function () {
 
     var userselect = String.fromCharCode(event.keyCode).toLowerCase();
     var computerselect = options[Math.floor(Math.random() * options.length)];
-    var letter = "";
-
 
     if (userselect == 'a' || userselect == 'b' || userselect == 'c' || userselect == 'd' || userselect == 'e' || userselect == 'f' || userselect == 'g' || userselect == 'h' || userselect == 'i'
         || userselect == 'j' || userselect == 'k' || userselect == 'l' || userselect == 'm' || userselect == 'n' || userselect == 'o' || userselect == 'p' || userselect == 'q'
@@ -21,16 +19,15 @@ document.onkeyup = function () {
             letter = "";
         }
         if (userselect !== computerselect) {
-            letter = userselect + ", ";
+            letter = userselect + ", "+ letter;
             guessLeft--;
-            letter = userselect;
 
             if (guessLeft == 0) {
                 losses++;
                 letter = "";
                 guessLeft = 9;
             }
-            
+
         }
 
     }
